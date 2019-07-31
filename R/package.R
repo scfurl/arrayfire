@@ -4,7 +4,7 @@
 #' 
 #' @docType package
 #' @author scfurl 
-#' @import RcppArrayFire
+#' @import RcppArrayFire RcppArmadillo
 #' @useDynLib arrayfire
 #' @name arrayfire
 NULL  

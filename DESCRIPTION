@@ -8,7 +8,7 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Imports: Rcpp (>= 1.0.2)
-LinkingTo: RcppArrayFire, Rcpp
+LinkingTo: RcppArrayFire, RcppArmadillo, Rcpp
 SystemRequirements: C++11
 RoxygenNote: 6.1.1
 Encoding: UTF-8
