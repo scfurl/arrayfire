@@ -6,55 +6,25 @@
 
 using namespace Rcpp;
 
-// rcpparrayfire_hello_world
-af::array rcpparrayfire_hello_world();
-RcppExport SEXP _arrayfire_rcpparrayfire_hello_world() {
+// put_option_pricer_af
+af::array put_option_pricer_af(RcppArrayFire::typed_array<f32> s, double k, double r, double y, double t, double sigma);
+RcppExport SEXP _arrayfire_put_option_pricer_af(SEXP sSEXP, SEXP kSEXP, SEXP rSEXP, SEXP ySEXP, SEXP tSEXP, SEXP sigmaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpparrayfire_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparrayfire_outerproduct
-af::array rcpparrayfire_outerproduct(const RcppArrayFire::typed_array<f32>& x);
-RcppExport SEXP _arrayfire_rcpparrayfire_outerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const RcppArrayFire::typed_array<f32>& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparrayfire_outerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparrayfire_innerproduct
-double rcpparrayfire_innerproduct(const RcppArrayFire::typed_array<f32>& x);
-RcppExport SEXP _arrayfire_rcpparrayfire_innerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const RcppArrayFire::typed_array<f32>& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparrayfire_innerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparrayfire_bothproducts
-Rcpp::List rcpparrayfire_bothproducts(const RcppArrayFire::typed_array<f32>& x);
-RcppExport SEXP _arrayfire_rcpparrayfire_bothproducts(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const RcppArrayFire::typed_array<f32>& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparrayfire_bothproducts(x));
+    Rcpp::traits::input_parameter< RcppArrayFire::typed_array<f32> >::type s(sSEXP);
+    Rcpp::traits::input_parameter< double >::type k(kSEXP);
+    Rcpp::traits::input_parameter< double >::type r(rSEXP);
+    Rcpp::traits::input_parameter< double >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(put_option_pricer_af(s, k, r, y, t, sigma));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_arrayfire_rcpparrayfire_hello_world", (DL_FUNC) &_arrayfire_rcpparrayfire_hello_world, 0},
-    {"_arrayfire_rcpparrayfire_outerproduct", (DL_FUNC) &_arrayfire_rcpparrayfire_outerproduct, 1},
-    {"_arrayfire_rcpparrayfire_innerproduct", (DL_FUNC) &_arrayfire_rcpparrayfire_innerproduct, 1},
-    {"_arrayfire_rcpparrayfire_bothproducts", (DL_FUNC) &_arrayfire_rcpparrayfire_bothproducts, 1},
+    {"_arrayfire_put_option_pricer_af", (DL_FUNC) &_arrayfire_put_option_pricer_af, 6},
     {NULL, NULL, 0}
 };
 
