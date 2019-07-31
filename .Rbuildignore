@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^R/debug\.R$
+^debug\.R$
+
