@@ -23,9 +23,26 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// put_option_pricer_arma
+arma::colvec put_option_pricer_arma(arma::colvec s, double k, double r, double y, double t, double sigma);
+RcppExport SEXP _arrayfire_put_option_pricer_arma(SEXP sSEXP, SEXP kSEXP, SEXP rSEXP, SEXP ySEXP, SEXP tSEXP, SEXP sigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::colvec >::type s(sSEXP);
+    Rcpp::traits::input_parameter< double >::type k(kSEXP);
+    Rcpp::traits::input_parameter< double >::type r(rSEXP);
+    Rcpp::traits::input_parameter< double >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(put_option_pricer_arma(s, k, r, y, t, sigma));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_arrayfire_put_option_pricer_af", (DL_FUNC) &_arrayfire_put_option_pricer_af, 6},
+    {"_arrayfire_put_option_pricer_arma", (DL_FUNC) &_arrayfire_put_option_pricer_arma, 6},
     {NULL, NULL, 0}
 };
 

@@ -7,3 +7,9 @@ put_option_pricer_af <- function(s, k, r, y, t, sigma) {
     .Call('_arrayfire_put_option_pricer_af', PACKAGE = 'arrayfire', s, k, r, y, t, sigma)
 }
 
+#' Test function
+#' @export
+put_option_pricer_arma <- function(s, k, r, y, t, sigma) {
+    .Call('_arrayfire_put_option_pricer_arma', PACKAGE = 'arrayfire', s, k, r, y, t, sigma)
+}
+

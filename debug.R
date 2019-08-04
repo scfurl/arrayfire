@@ -21,8 +21,8 @@ git push -u origin master
 devtools::document()
 roxygen2::roxygenise()
 
-
 s <- matrix(seq(0, 100, by = .0001), ncol = 1)
-rbenchmark::benchmark(AF = put_option_pricer_af(s, 60, .01, .02, 1, .05),
+rbenchmark::benchmark(Arma = put_option_pricer_arma(s, 60, .01, .02, 1, .05),
+                      AF = put_option_pricer_af(s, 60, .01, .02, 1, .05),
                       order = "relative", 
                       replications = 100)[,1:4]
